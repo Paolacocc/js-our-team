@@ -30,11 +30,23 @@ const teamMembersArray = [
        foto: "barbara-ramos-graphic-designer.jpg"
     }
 ];
-
+let list = "";
 for (let i = 0; i < teamMembersArray.length; i++) {
     const objectArray = teamMembersArray[i];
+    //stampo gli objecy
+    console.log(objectArray);
+
+    list += `<li>${objectArray.name} 
+                ${objectArray.ruolo} 
+                ${objectArray.foto}</li>`
+   
     for (let key in objectArray) {
+        //stampo object key and value
         console.log(key, objectArray[key]);
     }
 }
 
+
+
+const objectList = document.querySelector(".list-obj");
+objectList.innerHTML = list;
