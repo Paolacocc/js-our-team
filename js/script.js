@@ -2,32 +2,32 @@ const teamMembersArray = [
     {
        name: "Wayne Barnett",
        ruolo: "Founder & CEO",
-       foto: "wayne-barnett-founder-ceo.jpg"
+       foto: "img/wayne-barnett-founder-ceo.jpg"
     },
     {
        name: "Angela Caroll",
        ruolo: "Chief Editor",
-       foto: "angela-caroll-chief-editor.jpg"
+       foto: "img/angela-caroll-chief-editor.jpg"
     },
     {
        name: "Walter Gordon",
        ruolo: "Office Manager",
-       foto: "walter-gordon-office-manager.jpg"
+       foto: "img/walter-gordon-office-manager.jpg"
     },
     {
        name: "Angela Lopez",
        ruolo: "Social Media Manager",
-       foto: "angela-lopez-social-media-manager.jpg"
+       foto: "img/angela-lopez-social-media-manager.jpg"
     },
     {
        name: "Scott Estrada",
        ruolo: "Developer",
-       foto: "scott-estrada-developer.jpg"
+       foto: "img/scott-estrada-developer.jpg"
     },
     {
        name: "Barbara Ramos",
        ruolo: "Graphic Designer",
-       foto: "barbara-ramos-graphic-designer.jpg"
+       foto: "img/barbara-ramos-graphic-designer.jpg"
     }
 ];
 let list = "";
@@ -36,9 +36,20 @@ for (let i = 0; i < teamMembersArray.length; i++) {
     //stampo gli objecy
     console.log(objectArray);
 
-    list += `<li>${objectArray.name} 
-                ${objectArray.ruolo} 
-                ${objectArray.foto}</li>`
+    list += `<div class="col">
+                <div class="card">
+                    <img src="${objectArray.foto}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h4 class="card-title">${objectArray.name}</h4>
+                    <h5 class="card-title">${objectArray.ruolo}</h5>
+                    
+                    </div>
+                </div>
+            </div>`
+
+    // list += `<li>${objectArray.name}</li>`+ 
+    //         `<li>${objectArray.ruolo}</li>`+ 
+    //         `<img src="${objectArray.foto}">`
    
     for (let key in objectArray) {
         //stampo object key and value
@@ -47,6 +58,5 @@ for (let i = 0; i < teamMembersArray.length; i++) {
 }
 
 
-
-const objectList = document.querySelector(".list-obj");
+const objectList = document.querySelector(".row");
 objectList.innerHTML = list;
